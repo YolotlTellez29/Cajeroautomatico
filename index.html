@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cajero Automático</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            width: 400px;
+            margin: 50px auto;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+
+        button[type="submit"],
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        button[type="submit"]:hover,
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #cajero {
+            display: none;
+        }
+
+        #cajero p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #cajero label {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        #cajero input[type="number"] {
+            width: 50%;
+        }
+
+        #cajero button[type="submit"],
+        #cajero button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #cajero button[type="submit"]:hover,
+        #cajero button:hover {
+            background-color: #008CBA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-container w3-teal">
+        <h1>Cajero Automático</h1>
+    </div>
+    <form id="login-form" class="w3-container w3-card-4" style="width:50%">
+        <label for="card-number">Número de Tarjeta:</label>
+        <input class="w3-input" type="text" id="card-number" />
+        <br />
+        <label for="pin">NIP:</label>
+        <input class="w3-input" type="password" id="pin" />
+        <br />
+        <button class="w3-button w3-teal" type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="cajero" style="display: none;" class="w3-container w3-card-4" style="width:50%">
+        <p>Saldo actual: <span id="saldo">$0.00</span></p>
+        <label for="deposito">Depositar:</label>
+        <input class="w3-input" type="number" id="deposito" />
+        <button class="w3-button w3-teal" onclick="depositar()">Depositar</button>
+        <br />
+        <label for="retiro">Retirar:</label>
+        <input class="w3-input" type="number" id="retiro" />
+        <button class="w3-button w3-teal" onclick="retirar()">Retirar</button>
+    </div>
+    <script src="cajero.js"></script>
+</body>
+
+</html>
